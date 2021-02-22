@@ -18,19 +18,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-
-        setContentView(R.layout.fragment_first)
-        val eventType = findViewById<Spinner>(R.id.event_type)
-        val list = resources.getStringArray(R.array.eventOptions)
-        val adapter = ArrayAdapter(this , android.R.layout.simple_spinner_item, list)
-        eventType.adapter = adapter
-
-
-
-
-
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -50,12 +37,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun showDatePickerDialog(){
-        val datePicker = DatePickerFragment{day,month,year -> onDateSelected(day,month,year)}
-        datePicker.show(supportFragmentManager, "datePicker")
-    }
-
-    fun onDateSelected(day:Int, month:Int, year:Int){
-
-    }
 }

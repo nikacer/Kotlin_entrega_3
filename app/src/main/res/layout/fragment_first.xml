@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    tools:context=".FirstFragment"
+    >
 
 
     <Button
@@ -12,24 +13,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="@string/next"
+        android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.700"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Guardar" />
+        tools:text="guardar" />
 
     <Button
         android:id="@+id/cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="@string/next"
+        android:text="@string/cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.300"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Cancelar" />
+        tools:text="cancelar" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -70,7 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
                 android:hint="Nombre"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/name"/>
 
             <Spinner
                 android:id="@+id/event_type"
@@ -80,7 +82,7 @@
                 />
 
             <Switch
-                android:id="@+id/switch1"
+                android:id="@+id/allDay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
@@ -92,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="24dp"
-                android:text="Fecha Inicio"
+                android:text="@string/dateStartTitle"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -103,7 +105,9 @@
                 android:layout_margin="24dp"
                 android:clickable="false"
                 android:focusable="false"
-                android:hint="¿Cuando inicia?" />
+                android:hint="¿Cuando inicia?"
+                android:inputType="date"
+                android:autofillHints="@string/app_name"/>
 
             <EditText
                 android:id="@+id/hourStart"
@@ -113,7 +117,9 @@
                 android:clickable="false"
                 android:focusable="false"
                 android:hint="¿A que horas inicia?"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:inputType="time"
+                />
 
             <TextView
                 android:id="@+id/dateFinishTitle"
@@ -132,16 +138,17 @@
                 android:layout_margin="24dp"
                 android:clickable="false"
                 android:focusable="false"
-                android:hint="¿Cuando Termina?" />
+                android:hint="¿Cuando Termina?"
+                android:inputType="date"
+                />
 
             <EditText
                 android:id="@+id/hourFinish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
-
                 android:hint="¿A que horas termina?"
-                android:inputType="datetime"
+                android:inputType="time"
                 />
             <EditText
                 android:layout_width="match_parent"

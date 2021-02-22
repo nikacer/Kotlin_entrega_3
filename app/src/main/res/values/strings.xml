@@ -4,8 +4,9 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Guardar</string>
-    <string name="previous">Confirnmar</string>
+    <string name="save">Guardar</string>
+    <string name="confirm">Confirnmar</string>
+    <string name="cancel">Cancelar</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
@@ -19,4 +20,5 @@
     <string name="title">Llene los campos siguientes para generar un evento</string>
     <string name="today">Todo el dia</string>
     <string name="eventname">Nombre del Evento</string>
+    <string name="dateStartTitle">Fecha Inicio</string>
 </resources>
