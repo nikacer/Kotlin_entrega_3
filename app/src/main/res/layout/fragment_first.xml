@@ -43,9 +43,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             tools:layout_editor_absoluteX="177dp"
             tools:layout_editor_absoluteY="244dp">
@@ -55,10 +56,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="24dp"
                 android:text="Nuevo evento"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_margin="24dp"/>
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="match_parent"
@@ -67,16 +68,16 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre"
-                android:textStyle="bold"
                 android:layout_margin="24dp"
-                />
+                android:hint="Nombre"
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/event_type"
                 android:layout_width="match_parent"
+                android:layout_height="90dp"
                 android:layout_margin="24dp"
-                android:layout_height="90dp" />
+                />
 
             <Switch
                 android:id="@+id/switch1"
@@ -90,10 +91,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="24dp"
                 android:text="Fecha Inicio"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_margin="24dp"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/dateStart"
@@ -102,8 +103,7 @@
                 android:layout_margin="24dp"
                 android:clickable="false"
                 android:focusable="false"
-                android:hint="¿Cuando inicia?"
-                />
+                android:hint="¿Cuando inicia?" />
 
             <EditText
                 android:id="@+id/hourStart"
@@ -113,17 +113,17 @@
                 android:clickable="false"
                 android:focusable="false"
                 android:hint="¿A que horas inicia?"
-                />
+                android:visibility="visible" />
 
             <TextView
                 android:id="@+id/dateFinishTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="24dp"
                 android:text="Fecha finalizacion"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_margin="24dp"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/dateFinish"
@@ -132,18 +132,28 @@
                 android:layout_margin="24dp"
                 android:clickable="false"
                 android:focusable="false"
-                android:hint="¿Cuando Termina?"
-                />
+                android:hint="¿Cuando Termina?" />
 
             <EditText
                 android:id="@+id/hourFinish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="24dp"
-                android:clickable="false"
-                android:focusable="false"
+
                 android:hint="¿A que horas termina?"
+                android:inputType="datetime"
                 />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="150dp"
+                android:inputType="textMultiLine"
+                android:gravity="top"
+                android:hint="Descripcion (opcional)"
+                android:layout_margin="24dp"
+                android:id="@+id/description"
+                />
+
 
             <Space
                 android:layout_width="match_parent"
