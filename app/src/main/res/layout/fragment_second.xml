@@ -139,7 +139,13 @@
             android:layout_height="74dp"
             android:ems="10"
             android:gravity="start|top"
+            android:clickable="false"
+            android:focusable="false"
             android:inputType="textMultiLine" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="46dp" />
 
     </LinearLayout>
 
