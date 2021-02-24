@@ -78,8 +78,7 @@ class FirstFragment : Fragment() {
                     if(!validDate(dateFinish.text.toString(), "dd/MM/yyyy")) errors.add("La fecha final es Incorrecta")
                     if(p.matcher(hourStart.text.toString()).matches() || hourStart.text.isEmpty()) errors.add("La Hora de inicio es Incorrecta")
                     if(p.matcher(hourFinish.text.toString()).matches() || hourFinish.text.isEmpty()) errors.add("La Hora Final es Incorrecta")
-
-
+                    if(!dateDiff(dateStart.text.toString(),dateFinish.text.toString(), "dd/MM/yyyy")) errors.add("La fecha de inicio es mayor a la fecha Final")
 
                     if(errors.isEmpty()){
                         bundle = bundleOf(
@@ -152,10 +151,25 @@ class FirstFragment : Fragment() {
     private fun validDate(date: String, format: String):Boolean{
         var isValid = false
         try {
-            SimpleDateFormat(format).parse(date)
+            val dateFormat = SimpleDateFormat(format)
+            dateFormat.setLenient(false)
+            dateFormat.parse(date)
             isValid = true
         }catch (e: Exception){
             isValid=false
+        }
+
+        return isValid
+    }
+
+    private fun dateDiff(dateStart: String, dateFinish:String, format: String): Boolean{
+        var isValid = false
+        val date1 = SimpleDateFormat(format).parse(dateStart)
+        val date2 = SimpleDateFormat(format).parse(dateFinish)
+        val diff = date2.compareTo(date1)
+
+        if(diff >= 0){
+            isValid = true
         }
 
         return isValid
