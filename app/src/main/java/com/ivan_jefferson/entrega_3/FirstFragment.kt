@@ -33,6 +33,7 @@ class FirstFragment : Fragment() {
 
 
         val buttonSave = view.findViewById<Button>(R.id.save)
+        val buttonCancel = view.findViewById<Button>(R.id.cancel)
         val switch = view.findViewById<Switch>(R.id.allDay)
         val name = view.findViewById<TextView>(R.id.name)
         val eventType = view.findViewById<Spinner>(R.id.event_type)
@@ -110,23 +111,41 @@ class FirstFragment : Fragment() {
         }
 
         switch.setOnClickListener {
+            actionSwitch(errorsInput,switch,hourStart,dateFinishtTitle,dateFinish,hourFinish,dateStartTitle)
+        }
+
+        buttonCancel.setOnClickListener{
+            name.setText("")
+            eventType.setSelection(0)
+            switch.isChecked = false
+            dateStart.setText("")
+            dateFinish.setText("")
+            hourFinish.setText("")
+            hourStart.setText("")
+            description.setText("")
             errorsInput.isVisible = false
-            if(switch.isChecked){
-                hourStart.isVisible = false
-                dateFinishtTitle.isVisible =false
-                dateFinish.isVisible = false
-                hourFinish.isVisible = false
-                dateStartTitle.text = "Fecha"
-            }else {
-                hourStart.isVisible = true
-                dateFinishtTitle.isVisible =true
-                dateFinish.isVisible = true
-                hourFinish.isVisible = true
-                dateStartTitle.text = resources.getString(R.string.dateStartTitle)
-            }
+            actionSwitch(errorsInput,switch,hourStart,dateFinishtTitle,dateFinish,hourFinish,dateStartTitle)
+            scroll.smoothScrollTo(0,0)
         }
 
 
+    }
+
+    private fun actionSwitch(errorsInput:EditText,switch:Switch,hourStart:EditText,dateFinishtTitle:TextView,dateFinish:EditText,hourFinish:EditText,dateStartTitle:TextView){
+        errorsInput.isVisible = false
+        if(switch.isChecked){
+            hourStart.isVisible = false
+            dateFinishtTitle.isVisible =false
+            dateFinish.isVisible = false
+            hourFinish.isVisible = false
+            dateStartTitle.text = "Fecha"
+        }else {
+            hourStart.isVisible = true
+            dateFinishtTitle.isVisible =true
+            dateFinish.isVisible = true
+            hourFinish.isVisible = true
+            dateStartTitle.text = resources.getString(R.string.dateStartTitle)
+        }
     }
 
 

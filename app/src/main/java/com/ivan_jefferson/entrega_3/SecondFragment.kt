@@ -34,7 +34,7 @@ class SecondFragment : Fragment() {
         val hourStart = view.findViewById<EditText>(R.id.hourStart)
         val dateFinish = view.findViewById<EditText>(R.id.dateFinish)
         val hourFinish = view.findViewById<EditText>(R.id.hourFinish)
-        val eventType = view.findViewById<EditText>(R.id.event_type)
+        val eventType = view.findViewById<EditText>(R.id.eventType)
         val eventName = view.findViewById<EditText>(R.id.eventName)
         val allDay = view.findViewById<Switch>(R.id.allDay)
 
@@ -46,13 +46,13 @@ class SecondFragment : Fragment() {
             val params:Bundle? = arguments
 
             actionView("description", description,params)
-            //actionView("dateStart",dateStart,params)
+            actionView("dateStart",dateStart,params)
             actionView("hourStart",hourStart,params)
-            //actionView("dateFinish",dateFinish,params)
+            actionView("dateFinish",dateFinish,params)
            val respHorFinish = actionView("hourFinish", hourFinish, params)
-            //actionView("eventType",eventType,params)
+            actionView("eventType",eventType,params)
             actionView("name",eventName,params)
-            if(params?.get("allDay" ) === "true"){
+            if(params?.get("allDay" ) === true){
                 allDay.isChecked = true
             }
 
